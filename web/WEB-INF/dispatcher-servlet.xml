@@ -10,7 +10,9 @@
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
-    <context:component-scan base-package="fc.mywebproj"/>
+    <!--这个地方 IDEA 有问题，探测不到  main.java.fc.mywebproj 但是如果按照IDEA改成fc.mywebproj，tomcat又探测不到了-->
+    <context:component-scan base-package="main.java.fc.mywebproj"/>
+    <context:annotation-config/>
     <mvc:annotation-driven/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
